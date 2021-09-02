@@ -6,7 +6,7 @@ WORKDIR /build
 RUN go build -o main .
 
 FROM alpine
-RUN apk add build-base
+RUN #apk add build-base
 COPY --from=builder /build/main /app/
 WORKDIR /app
 CMD ["./main"]
